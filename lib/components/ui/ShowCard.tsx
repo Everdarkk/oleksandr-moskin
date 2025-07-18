@@ -1,19 +1,35 @@
-import Image from 'next/image'
-import { ShowType } from '../../types'
 
-export default function ShowCard({year, city, country, name, src}: ShowType) {
+import { ShowType } from '../../types'
+import styles from '../../styles/showcard.module.css'
+import { Geist_Mono } from 'next/font/google'
+import Image from 'next/image'
+
+const geist = Geist_Mono({
+    subsets: ['latin'],
+    weight: ['400'],
+    variable: '--font-cousine',
+    display: 'swap',
+})
+
+export default function ShowCard({year, city, country, name, src, display}: ShowType) {
+    const side = display === 'normal' ? styles.containerNormal : styles.containerReversed
+    const direction = display === 'normal' ? styles.imageNormal : styles.imageReversed
+
     return (
-        <div style={{color: 'white'}}>
+        <div className={`${geist.className} ${side}`}>
             <Image
                 src={src}
                 alt={name}
                 width={500}
                 height={500}
+                className={`${direction}`}
             />
 
-            <h3>{name}</h3>
-            <p>{city}, {country}</p>
-            <p>{year}</p>
+            <div className={styles.contentWrap}>
+                <h3 className={styles.title}>{name}</h3>
+                <p className={styles.place}>{city}, {country}</p>
+                <p className={styles.year}>{year}</p>
+            </div>
         </div>
     )
 }

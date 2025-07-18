@@ -11,13 +11,13 @@ export type PhotoProps = {
 }
 
 export interface TransitionProps {
-  children: ReactNode,
+  children: ReactNode
 }
 
 export type AnimatedLetterProps = {
-  letter: string,
-  isTriggered?: boolean,
-  onAnimationComplete?: (index: number) => void,
+  letter: string
+  isTriggered?: boolean
+  onAnimationComplete?: (index: number) => void
   index?: number
 }
 
@@ -30,9 +30,10 @@ export type AnimatedProfileProps = {
 }
 
 export type ShowType = {
-    year: number;
-    city: string;
-    country: string;
-    name: string;
-    src: string;
+    year: number
+    city: string
+    country: string
+    name: string
+    src: string
+    display: 'normal' | 'reversed'
 }

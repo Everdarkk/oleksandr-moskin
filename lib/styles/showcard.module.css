@@ -1,0 +1,42 @@
+
+.containerReversed {
+    flex-direction: row-reverse;
+}
+
+.containerNormal, .containerReversed {
+    /* background-color: crimson; */
+    margin: 1rem;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    justify-self: center;
+    gap: 5vw;
+    color: ivory;
+}
+
+.contentWrap {
+    background-color: teal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    
+}
+.title {
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.imageNormal {
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+.imageReversed {
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+.imageNormal, .imageReversed {
+    width: clamp(15.625rem, 30vw, 31.25rem);
+    height: clamp(15.625rem, 30vw, 31.25rem);
+}

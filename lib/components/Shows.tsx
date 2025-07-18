@@ -13,6 +13,7 @@ export default function Shows() {
                     country={show.country} 
                     name={show.name} 
                     src={show.src}
+                    display={show.display}
                 />
             ))}
         </ul>
