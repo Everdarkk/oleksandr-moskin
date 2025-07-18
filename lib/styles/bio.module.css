@@ -1,0 +1,108 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 30rem;
+  height: fit-content;
+    
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  z-index: 1;
+  overflow: hidden;
+}
+
+
+
+.imageWrap {
+  height: auto;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale();
+  transition: all 0.5s ease-out;
+}
+.image:hover {
+  filter: none;
+}
+
+.contentWrap {
+
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  font-size: 1.5rem;
+  align-items: stretch;
+  color: ivory;
+  cursor: cell;
+  margin-bottom: 3rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word; /* застарілий аналог для кращої сумісності */
+  word-break: break-word; /* можна додати для більш агресивного переносу */
+}
+
+.divider {
+  z-index: 99;
+  background: linear-gradient(to bottom, #ff4e50, #f9d423, #42a5f5);
+  width: 0.3rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ----- BREAKPOINTS ----- */
+@media (max-width: 1740px) {
+  .contentWrap {
+    width: 80%;
+  }
+}
+
+
+@media (max-width: 1440px) {
+  .contentWrap {
+    width: 90%;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .contentWrap {
+    width: 95%;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .divider {
+    
+    height: 0.3rem;
+    background: linear-gradient(to right, #ff4e50, #f9d423, #42a5f5);
+    width: 100%;
+    
+}
+}
+
+@media (max-width: 800px) {
+  .contentWrap {
+    padding: 0.7rem;
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container{
+    min-height: none;
+  }
+
+  .contentWrap {
+    width: 100%;
+    font-size: 1rem;
+  }
+}

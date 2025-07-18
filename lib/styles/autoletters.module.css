@@ -1,0 +1,32 @@
+
+@keyframes gentleDrift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    
+    transform: translate(var(--offsetX1), var(--offsetY1));
+  }
+  50% {
+    
+    transform: translate(var(--offsetX2), var(--offsetY2));
+  }
+  75% {
+    
+    transform: translate(var(--offsetX3), var(--offsetY3));
+  }
+  100% {
+    
+    transform: translate(0, 0);
+  }
+}
+
+.letter {
+  display: inline-block;
+  line-height: 0.75;
+  user-select: none;
+  
+  animation-name: gentleDrift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}

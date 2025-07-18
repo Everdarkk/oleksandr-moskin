@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.imageWrap {
+  width: 5rem;
+  height: 5rem;
+  transition: all 0.4s ease-out;
+}
+
+.imageWrap:hover:not(.active) {
+  transform: scale(1.5);
+  z-index: 51;
+}
+
+.active {
+  transform: scale(1.5);
+  z-index: 50;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
+
+/* ----- BREAKPOINTS ----- */
+
+@media (max-width: 768px) {
+  .imageWrap {
+    width: clamp(2rem, 6vw, 5rem);
+    height: clamp(2rem, 6vw, 5rem);
+  }
+}

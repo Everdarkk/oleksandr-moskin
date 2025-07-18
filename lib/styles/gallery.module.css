@@ -1,0 +1,271 @@
+/* .container {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #000, #333);
+  
+
+}
+
+.card {
+  width: 31.25rem;
+  height: 31.25rem;
+  position: relative;
+  overflow: hidden;
+  margin: 0.3rem;
+}
+
+.imageWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.6s ease-out;
+  z-index: 0;
+}
+
+.card:hover .image {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+.card:hover .overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.6s ease;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover .caption {
+  transform: translateY(0%);
+}
+
+.fullOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  
+}
+
+.fullImage {
+  height: 90%;
+  object-fit: contain;
+}
+
+.topside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomside {
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-self: center;
+}
+
+
+/* ----- BREAKPOINTS ----- */
+
+/* @media (max-width: 1050px) {
+  .caption {
+    height: 5rem;
+  }
+
+  .card {
+    width: 18rem;
+    height: 18rem;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .card {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .fullImage {
+    width: clamp(13rem, 80vw, 50rem);
+    height: clamp(20rem, 90vh, 75rem);
+
+  }
+} */ 
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #000, #333);
+}
+
+.card {
+  width: 31.25rem;
+  height: 31.25rem;
+  position: relative;
+  overflow: hidden;
+  margin: 0.3rem;
+}
+
+.imageWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageMotion {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+  z-index: 0;
+  cursor: zoom-in;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%; 
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.caption {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+
+/* -------- FULLSCREEN -------- */
+
+.fullOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fullImage {
+  height: 90%;
+  object-fit: contain;
+  cursor: zoom-out;
+}
+
+.topside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomside {
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-self: center;
+}
+
+/* ----- BREAKPOINTS ----- */
+
+@media (max-width: 1050px) {
+  .card {
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .overlay {
+    height: 35%;
+  }
+
+  .caption {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .overlay {
+    height: 35%;
+  }
+
+  .caption {
+    font-size: 0.9rem;
+    padding: 0 0.4rem;
+  }
+
+  .fullImage {
+    width: clamp(13rem, 80vw, 50rem);
+    height: clamp(20rem, 90vh, 75rem);
+  }
+}
+

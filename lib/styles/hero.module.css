@@ -1,0 +1,155 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container .video {
+    position: relative;
+    width: 100%;
+    height: 99dvh;
+    object-fit: cover;
+    z-index: 0;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+
+}
+
+.textWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+
+    padding-bottom: 3rem;
+
+    background: #000;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    font-size: clamp(4rem, 17vw, 9.5rem);
+    
+    text-align: center;
+    mix-blend-mode: multiply;
+}
+
+/* ----- ANIMATIONS ----- */
+
+
+
+/* ----- BREAKPOINTS ----- */
+@media (max-width: 1000px) {
+    .container {
+        height: 100dvh;
+    }
+
+    .container .video {
+        height: 99dvh;
+    }
+
+}
+
+@media (max-width: 850px) {
+    .container {
+        height: fit-content;
+    }
+
+    .container .video {
+        height: 70rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .container .video {
+        height: 65rem;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .container .video {
+        height: 60rem;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .container .video {
+        height: 55rem;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .container .video {
+        height: 53rem;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .container .video {
+        height: 50rem;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .textWrap {
+        z-index: 30;
+        padding: 10vw 0;
+        justify-content: flex-start;
+        font-size: 5rem;
+        margin: 0 0;
+        
+    }
+    .container .video {
+        height: auto;
+        min-height: 80vh;
+        margin: 0 0;
+    }
+    .container {
+        height: auto;
+        overflow: visible;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .textWrap {
+        font-size: 4.5rem;
+    }
+    .container .video {
+        height: 36rem;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .textWrap {
+        font-size: 3rem;
+    }
+    .container .video {
+        height: 30rem;
+    }
+
+}
+
+
+
+
+

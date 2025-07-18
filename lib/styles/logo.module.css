@@ -1,0 +1,97 @@
+/* components/AnimatedLogo/AnimatedLogo.module.css */
+
+.logoContainer {
+  width: clamp(4rem, 5vw, 5rem);
+  height: clamp(4rem, 5vw, 5rem);
+  cursor: pointer;
+  position: relative;
+
+  /* Основне зображення залишається, як і було */
+  background-image: var(--logo-image-url);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Ключова зміна тут!
+  Ми використовуємо MASK замість blend-mode.
+*/
+.logoContainer::before,
+.logoContainer::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* ВАЖЛИВО: Видаляємо background-image звідси */
+  /* background-image: var(--logo-image-url); */
+  
+  /* Замість нього задаємо суцільний колір фону */
+  background-color: #00ffea; /* Колір для першого шару */
+
+  /* І використовуємо логотип як маску */
+  mask-image: var(--logo-image-url);
+  -webkit-mask-image: var(--logo-image-url); /* Для сумісності з Safari/Chrome */
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+
+  /* Blend-mode більше не потрібен */
+  /* mix-blend-mode: screen; */
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Для другого шару просто міняємо колір */
+.logoContainer::after {
+  background-color: #ff00c1; /* Малиновий */
+}
+
+
+/* --- АНІМАЦІЇ ЗАЛИШАЮТЬСЯ БЕЗ ЗМІН --- */
+
+/* При наведенні показуємо шари і запускаємо анімації */
+.logoContainer:hover::before,
+.logoContainer:hover::after {
+  opacity: 1;
+}
+
+.logoContainer:hover::before {
+  animation: glitch-anim-1 2s infinite linear alternate;
+}
+
+.logoContainer:hover::after {
+  animation: glitch-anim-2 1.5s infinite linear alternate;
+}
+
+@keyframes glitch-anim-1 {
+  0% { transform: translate(0, 0); clip-path: inset(50% 0 30% 0); }
+  10% { transform: translate(-5px, 2px); clip-path: inset(10% 0 85% 0); }
+  20% { transform: translate(5px, -2px); clip-path: inset(90% 0 5% 0); }
+  30% { transform: translate(-3px, 3px); clip-path: inset(40% 0 45% 0); }
+  40% { transform: translate(3px, -3px); clip-path: inset(60% 0 30% 0); }
+  50% { transform: translate(-4px, 1px); clip-path: inset(20% 0 70% 0); }
+  60% { transform: translate(4px, -1px); clip-path: inset(80% 0 10% 0); }
+  70% { transform: translate(-2px, 4px); clip-path: inset(35% 0 55% 0); }
+  80% { transform: translate(2px, -4px); clip-path: inset(55% 0 25% 0); }
+  90% { transform: translate(-6px, 0); clip-path: inset(5% 0 90% 0); }
+  100% { transform: translate(0, 0); clip-path: inset(50% 0 30% 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { transform: translate(0, 0); clip-path: inset(15% 0 75% 0); }
+  15% { transform: translate(4px, -3px); clip-path: inset(60% 0 20% 0); }
+  30% { transform: translate(-6px, 3px); clip-path: inset(5% 0 90% 0); }
+  45% { transform: translate(2px, -1px); clip-path: inset(80% 0 15% 0); }
+  60% { transform: translate(-2px, 2px); clip-path: inset(30% 0 60% 0); }
+  75% { transform: translate(5px, -4px); clip-path: inset(50% 0 40% 0); }
+  90% { transform: translate(-3px, 1px); clip-path: inset(25% 0 70% 0); }
+  100% { transform: translate(0, 0); clip-path: inset(15% 0 75% 0); }
+}

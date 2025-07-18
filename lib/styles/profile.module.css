@@ -1,0 +1,70 @@
+.container {
+  perspective: 1000px;
+  display: inline-block;
+}
+
+.imageWrap {
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  margin: 1rem;
+}
+
+.image {
+  height: 40rem;
+  width: 40rem;
+  display: block;
+  /* border-radius: 50%; */
+  object-fit: cover;
+  filter: grayscale();
+  transition: filter 0.5s ease;
+  -webkit-clip-path: polygon(50% 0, 80% 10%, 100% 33%, 100% 66%, 80% 90%, 50% 100%, 20% 90%, 0 66%, 0 33%, 20% 10%) ;
+  clip-path: polygon(50% 0, 80% 10%, 100% 33%, 100% 66%, 80% 90%, 50% 100%, 20% 90%, 0 66%, 0 33%, 20% 10%);
+}
+
+.image:hover {
+  filter: none;
+}
+
+.highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 50%; */
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.25),
+    transparent 60%
+  );
+  -webkit-clip-path: polygon(50% 0, 80% 10%, 100% 33%, 100% 66%, 80% 90%, 50% 100%, 20% 90%, 0 66%, 0 33%, 20% 10%) ;
+  clip-path: polygon(50% 0, 80% 10%, 100% 33%, 100% 66%, 80% 90%, 50% 100%, 20% 90%, 0 66%, 0 33%, 20% 10%);
+  mix-blend-mode: soft-light;
+  transition: background-position 0.2s ease;
+}
+
+/* ----- BREAKPOINTS ----- */
+
+@media (max-width: 600px) {
+  .image {
+    width: 25rem;
+    height: 25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image {
+    width: 22rem;
+    height: 22rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .image {
+    width: 18rem;
+    height: 18rem;
+  }
+
+}
