@@ -37,3 +37,16 @@ export type ShowType = {
     src: string
     display: 'normal' | 'reversed'
 }
+
+export interface Star {
+  x: number; 
+  y: number;   
+  z: number; 
+  px: number; 
+  py: number; 
+  color: string; 
+}
+export interface Point {
+  x: number;
+  y: number;
+}

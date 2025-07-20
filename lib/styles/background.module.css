@@ -6,3 +6,10 @@
     height: 100%;
     object-fit: cover;
 }
+
+.background {
+    overflow: hidden; 
+    width: 100vw; 
+    height: 100vh; 
+    background-color: #000000; 
+}
