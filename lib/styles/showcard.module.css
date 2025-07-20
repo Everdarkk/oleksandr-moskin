@@ -5,7 +5,7 @@
 
 .containerNormal, .containerReversed {
     /* background-color: crimson; */
-    margin: 1rem;
+    margin-top: 2rem;
     display: flex;
     width: 50%;
     align-items: center;
@@ -16,7 +16,7 @@
 }
 
 .contentWrap {
-    background-color: teal;
+    /* background-color: teal; */
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -39,4 +39,36 @@
 .imageNormal, .imageReversed {
     width: clamp(15.625rem, 30vw, 31.25rem);
     height: clamp(15.625rem, 30vw, 31.25rem);
+}
+
+/* ----- BREAKPOINTS ----- */
+
+@media (max-width: 1440px) {
+    .containerNormal, .containerReversed {
+        width: 70%;
+    }
+}
+
+@media (max-width: 600px) {
+    .containerNormal, .containerReversed {
+        padding: 1rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 440px) {
+    .containerNormal, .containerReversed {
+        width: 70%;
+        flex-direction: column;
+    }
+
+    .imageNormal, .imageReversed {
+        clip-path: polygon(0 0, 100% 0%, 100% 70%, 51% 100%, 0 70%);
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 70%, 51% 100%, 0 70%);
+    }
+
+    .contentWrap {
+        justify-self: center;
+        text-align: center;
+    }
 }
