@@ -5,7 +5,7 @@
 
 .containerNormal, .containerReversed {
     /* background-color: crimson; */
-    margin-top: 2rem;
+    margin: 5vw;
     display: flex;
     width: 50%;
     align-items: center;
@@ -23,7 +23,10 @@
     
 }
 .title {
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.place, .year {
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
 }
 
 .imageNormal {
@@ -58,8 +61,10 @@
 
 @media (max-width: 440px) {
     .containerNormal, .containerReversed {
-        width: 70%;
+        width: 100%;
         flex-direction: column;
+        align-self: center;
+        margin-inline: 0.5rem;
     }
 
     .imageNormal, .imageReversed {

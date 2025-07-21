@@ -14,12 +14,25 @@
   height: 40rem;
   width: 40rem;
   display: block;
-  /* border-radius: 50%; */
   object-fit: cover;
   filter: grayscale();
   transition: filter 0.5s ease;
-  -webkit-clip-path: polygon(50% 0, 80% 10%, 100% 33%, 100% 66%, 80% 90%, 50% 100%, 20% 90%, 0 66%, 0 33%, 20% 10%) ;
-  clip-path: polygon(50% 0, 80% 10%, 100% 33%, 100% 66%, 80% 90%, 50% 100%, 20% 90%, 0 66%, 0 33%, 20% 10%);
+
+  /* --- ОНОВЛЕНИЙ МЕТОД МАСКУВАННЯ --- */
+  /* Використовуємо вбудований SVG з вашою плямою для надійності */
+  -webkit-mask-image: url('/utils/blob.png');
+  mask-image: url('/utils/blob.png');
+  
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  /* Додаємо режим маски для кращої сумісності */
+  mask-mode: alpha;
+  -webkit-mask-mode: alpha;
 }
 
 .image:hover {
@@ -32,17 +45,27 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* border-radius: 50%; */
   pointer-events: none;
   background: radial-gradient(
     circle at center,
     rgba(255, 255, 255, 0.25),
     transparent 60%
   );
-  -webkit-clip-path: polygon(50% 0, 80% 10%, 100% 33%, 100% 66%, 80% 90%, 50% 100%, 20% 90%, 0 66%, 0 33%, 20% 10%) ;
-  clip-path: polygon(50% 0, 80% 10%, 100% 33%, 100% 66%, 80% 90%, 50% 100%, 20% 90%, 0 66%, 0 33%, 20% 10%);
   mix-blend-mode: soft-light;
   transition: background-position 0.2s ease;
+
+  /* --- СИНХРОНІЗУЄМО МАСКУ ДЛЯ ПІДСВІЧУВАННЯ --- */
+  -webkit-mask-image: url('/utils/blob.png');
+
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  mask-mode: alpha;
+  -webkit-mask-mode: alpha;
 }
 
 /* ----- BREAKPOINTS ----- */
@@ -66,5 +89,4 @@
     width: 18rem;
     height: 18rem;
   }
-
 }
