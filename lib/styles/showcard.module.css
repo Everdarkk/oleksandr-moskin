@@ -42,6 +42,10 @@
 .imageNormal, .imageReversed {
     width: clamp(15.625rem, 30vw, 31.25rem);
     height: clamp(15.625rem, 30vw, 31.25rem);
+    transition: 0.5s ease
+}
+.imageNormal:hover, .imageReversed:hover {
+    transform: scale(1.05);
 }
 
 /* ----- BREAKPOINTS ----- */

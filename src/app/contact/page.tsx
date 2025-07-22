@@ -3,7 +3,7 @@ import MaskedImage from "../../../lib/components/ui/MaskedImage"
 export default function Contact() {
     return (
         <>
-            <MaskedImage/>
+            <MaskedImage src={'/images/oleksandr-3.png'}/>
         </>
     )
 }

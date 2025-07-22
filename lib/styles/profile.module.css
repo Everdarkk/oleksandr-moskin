@@ -18,8 +18,6 @@
   filter: grayscale();
   transition: filter 0.5s ease;
 
-  /* --- ОНОВЛЕНИЙ МЕТОД МАСКУВАННЯ --- */
-  /* Використовуємо вбудований SVG з вашою плямою для надійності */
   -webkit-mask-image: url('/utils/blob.png');
   mask-image: url('/utils/blob.png');
   
@@ -29,8 +27,6 @@
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
   mask-position: center;
-
-  /* Додаємо режим маски для кращої сумісності */
   mask-mode: alpha;
   -webkit-mask-mode: alpha;
 }
@@ -54,7 +50,6 @@
   mix-blend-mode: soft-light;
   transition: background-position 0.2s ease;
 
-  /* --- СИНХРОНІЗУЄМО МАСКУ ДЛЯ ПІДСВІЧУВАННЯ --- */
   -webkit-mask-image: url('/utils/blob.png');
 
   -webkit-mask-size: cover;

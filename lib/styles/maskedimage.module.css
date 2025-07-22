@@ -1,0 +1,23 @@
+.container {
+    /* background-color: red; */
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: auto;
+    height: 70%;
+    -webkit-mask-image: url('/utils/mask-6.png');
+    mask-image: url('/utils/mask-6.png');
+  
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    mask-mode: alpha;
+    -webkit-mask-mode: alpha;
+}

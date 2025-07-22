@@ -35,7 +35,7 @@ export default function Bio() {
                 <Background />
                 <AnimatedScroll>
                     <AnimatedProfile
-                        src={'/images/oleksandr.png'}
+                        src={'/images/oleksandr-2.jpg'}
                         alt=''
                         width={500}
                         height={500}
