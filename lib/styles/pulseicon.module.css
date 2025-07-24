@@ -1,0 +1,74 @@
+.container {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background-color: rgba(31, 41, 55, 0.8); /* bg-gray-800/80 */
+          border: 1px solid rgb(55 65 81); /* border-gray-700 */
+          cursor: pointer;
+          transition: transform 0.2s ease-in-out;
+          /* Анімація зміни кольору для райдужного ефекту */
+          animation: rainbowShift 10s linear infinite;
+        }
+
+        .container:hover {
+          transform: scale(1.1);
+        }
+
+        /* Використовуємо псевдоелементи для створення хвиль */
+        .container::before,
+        .container::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          background: conic-gradient(from 180deg at 50% 50%, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff0000);
+          
+          /* Анімація пульсації */
+          animation-name: pulse;
+          animation-duration: 4s;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: infinite;
+        }
+
+        /* Перша, основна хвиля */
+        .container::before {
+          filter: blur(12px); /* blur-lg */
+        }
+
+        /* Друга, фонова хвиля з затримкою */
+        .container::after {
+          filter: blur(24px); /* blur-2xl */
+          animation-delay: -2s; /* Затримка в половину тривалості для безшовного ефекту */
+        }
+
+        .icon {
+          position: relative; /* Щоб іконка була поверх псевдоелементів */
+          z-index: 1;
+          color: white;
+        }
+
+        /* Ключові кадри для анімації пульсації */
+        @keyframes pulse {
+          0%, 100% {
+            transform: scale(0.8);
+            opacity: 0.7;
+          }
+          50% {
+            transform: scale(2.2);
+            opacity: 0;
+          }
+        }
+
+        /* Ключові кадри для зміни кольору */
+        @keyframes rainbowShift {
+          from {
+            filter: hue-rotate(0deg);
+          }
+          to {
+            filter: hue-rotate(360deg);
+          }
+        }

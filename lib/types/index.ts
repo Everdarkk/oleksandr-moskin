@@ -14,6 +14,7 @@ export interface TransitionProps {
   children: ReactNode
 }
 
+
 export type AnimatedLetterProps = {
   letter: string
   isTriggered?: boolean
@@ -49,4 +50,10 @@ export interface Star {
 export interface Point {
   x: number;
   y: number;
+}
+
+export interface PulseIconProps {
+  href: string;
+  ariaLabel: string;
+  icon: React.ReactNode;
 }
