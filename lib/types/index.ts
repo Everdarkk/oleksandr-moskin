@@ -55,5 +55,5 @@ export interface Point {
 export interface PulseIconProps {
   href: string;
   ariaLabel: string;
-  icon: React.ReactNode;
+  src: string;
 }
