@@ -6,7 +6,7 @@ export default function Contact() {
     return (
         <>
             <Transition>
-                <MaskedImage src={'/images/oleksandr-3.png'}/>
+                <MaskedImage />
                 <AnimatedSocial />
             </Transition>
         </>

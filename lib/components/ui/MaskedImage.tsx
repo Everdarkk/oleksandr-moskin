@@ -1,18 +1,20 @@
-import Image from 'next/image'
+
 import styles from '../../styles/maskedimage.module.css'
 
-export default function MaskedImage ({src}: {src: string}) {
+export default function MaskedImage () {
     return (
         <div className={styles.container}>
             
-
-            <Image
-                src={src}
-                alt='Contact Image'
-                width={2048}
-                height={1340}
-                className={styles.image}
-            /> 
+            <video 
+                    src={'videos/oleksandr-5.mp4'}
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline 
+                    className={styles.video}
+                >
+                </video>
+            
         </div>
     )
 }

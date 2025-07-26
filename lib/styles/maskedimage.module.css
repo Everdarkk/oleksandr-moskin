@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 
-.image {
+.video {
     width: clamp(50rem, 90vw, 90rem);
     height: auto;
     -webkit-mask-image: url('/utils/mask-6.png');
