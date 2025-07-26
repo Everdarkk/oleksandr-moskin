@@ -46,7 +46,7 @@ export default function Hero() {
         <>
             <div className={`${miltonian.className} ${styles.container}`}>
                 <motion.video 
-                    src='/videos/generated.mp4'
+                    src='/videos/oleksandr-3.mp4'
                     autoPlay 
                     muted 
                     loop 
