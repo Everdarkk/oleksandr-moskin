@@ -57,3 +57,10 @@ export interface PulseIconProps {
   ariaLabel: string;
   src: string;
 }
+
+export interface ChromaticIconProps {
+  href: string;
+  ariaLabel: string;
+  src: string;
+  hoverColor: string;
+}
