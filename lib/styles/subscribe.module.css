@@ -1,0 +1,19 @@
+.container {
+    color: ivory;
+    margin-block: 3rem;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+/* ----- BREAKPOINTS ------ */
+
+@media (max-width: 450px) {
+    .container {
+        width: 80%;
+        align-self: center;
+    }
+}
