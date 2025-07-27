@@ -4,9 +4,9 @@ import styles from '../styles/animatedsocial.module.css'
 export default function AnimatedSocial() {
     return (
         <div className={styles.container}>
-            <ChromaticIcon href={'/'} ariaLabel='link' src={'/utils/instagram.png'} hoverColor={'#E4405F'}/>
-            <ChromaticIcon href={'/'} ariaLabel='link' src={'/utils/tik-tok.png'} hoverColor={'#00f2ea'}/>
-            <ChromaticIcon href={'/'} ariaLabel='link' src={'/utils/telegram.png'} hoverColor={'#0088cc'}/>
+            <ChromaticIcon href={'/'} ariaLabel='link' src={'/utils/instagram.png'} hoverColor={'#3d0716'}/>
+            <ChromaticIcon href={'/'} ariaLabel='link' src={'/utils/tik-tok.png'} hoverColor={'#363417'}/>
+            <ChromaticIcon href={'/'} ariaLabel='link' src={'/utils/telegram.png'} hoverColor={'#061429'}/>
         </div>
     )
 }
