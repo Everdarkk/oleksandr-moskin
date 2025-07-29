@@ -1,16 +1,22 @@
 import Image from "next/image"
 import Link from "next/link"
 import styles from '../styles/footer.module.css'
-import { Nerko_One } from "next/font/google"
+import { Nerko_One, Grechen_Fuemen } from "next/font/google"
 
 const nerkoOne = Nerko_One({
     subsets: ['latin'],
     weight: ['400'],
 })
 
+const grechen = Grechen_Fuemen({
+    subsets: ['latin'],
+    weight: ['400'],
+    display: 'swap'
+})
+
 export default function Footer() {
     return (
-        <footer className={`${nerkoOne.className} ${styles.container}`}>
+        <footer className={`${grechen.className} ${styles.container}`}>
             <video autoPlay muted loop className={styles.video}>
                 <source src="/videos/bg-5.mp4" type="video/mp4" />
             </video>
