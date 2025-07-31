@@ -1,6 +1,6 @@
-import Bio from "../../../lib/components/Bio"
-import Hero from "../../../lib/components/Hero"
-import Transition from "../../../lib/components/ui/Transition"
+import Bio from "@/components/Bio"
+import Hero from "@/components/Hero"
+import Transition from "@/components/ui/Transition"
 
 
 export default function About() {

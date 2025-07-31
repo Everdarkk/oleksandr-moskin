@@ -1,32 +1,11 @@
 'use client'
 
-import { Fascinate_Inline, Peralta, Wendy_One, Miltonian_Tattoo } from 'next/font/google'
+import { Miltonian_Tattoo } from 'next/font/google'
 import styles from '../styles/hero.module.css'
 import AnimatedText from './ui/AnimatedText'
 import AutoAnimatedLetters from './ui/AutoAnimatedLetters'
 import { motion } from 'motion/react'
-import { useDeviceDetection } from '../hooks/useDeviceDetection'
-
-const peralta = Peralta({
-    subsets: ['latin'],
-    weight: ['400'],
-    variable: '--font-geist',
-    display: 'swap',
-})
-
-const wendy = Wendy_One({
-    subsets: ['latin'],
-    weight: ['400'],
-    variable: '--font-geist',
-    display: 'swap',
-})
-
-const fascinate = Fascinate_Inline({
-    subsets: ['latin'],
-    weight: ['400'],
-    variable: '--font-notable',
-    display: 'swap',
-})
+import { useDeviceDetection } from '../lib/hooks/useDeviceDetection'
 
 const miltonian = Miltonian_Tattoo({
     subsets: ['latin'],

@@ -1,5 +1,5 @@
 
-import styles from '../../styles/logo.module.css';
+import styles from '../../styles/logo.module.css'
 
 interface AnimatedLogoProps {
   src: string; 

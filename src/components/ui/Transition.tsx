@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'motion/react'
-import { TransitionProps } from '../../types'
+import { TransitionProps } from '../../lib/types'
 
 
 

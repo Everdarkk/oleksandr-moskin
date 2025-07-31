@@ -1,7 +1,7 @@
 import Image from "next/image"
-import gallery from "../../data/gallery"
+import gallery from "../../lib/data/gallery"
 import styles from "../../styles/photonav.module.css"
-import { PhotoProps } from "../../types"
+import { PhotoProps } from "../../lib/types"
 
 export default function PhotoNav( { onClick, activeIndex }: PhotoProps) {
     return (

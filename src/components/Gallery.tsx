@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect} from "react"
-import gallery from "../data/gallery"
+import gallery from "../lib/data/gallery"
 import Image from "next/image"
 import Arrow from "./ui/Arrow"
 import PhotoNav from "./ui/PhotoNav"

@@ -1,12 +1,12 @@
 'use client'
 
-import { ShowType } from '../../types'
+import { ShowType } from '../../lib/types'
 import styles from '../../styles/showcard.module.css'
 import { Geist_Mono } from 'next/font/google'
 import Image from 'next/image'
 import HoverText from './HoverText'
 import AutoAnimatingText from './AutoAnimatingText'
-import { useDeviceDetection } from '../../hooks/useDeviceDetection'
+import { useDeviceDetection } from '../../lib/hooks/useDeviceDetection'
 
 const geist = Geist_Mono({
     subsets: ['latin'],

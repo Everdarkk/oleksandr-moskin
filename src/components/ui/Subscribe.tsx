@@ -1,4 +1,4 @@
-import { subscribe } from '../../data/bio'
+import { subscribe } from '../../lib/data/bio'
 import styles from '../../styles/subscribe.module.css'
 import AutoAnimatingText from './AutoAnimatingText'
 

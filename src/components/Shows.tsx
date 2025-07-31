@@ -1,4 +1,4 @@
-import { shows } from "../data/shows"
+import { shows } from "../lib/data/shows"
 import ShowCard from "./ui/ShowCard"
 
 export default function Shows() {

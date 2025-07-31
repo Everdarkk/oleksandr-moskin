@@ -1,4 +1,4 @@
-import { navigation } from "../data/navigation"
+import { navigation } from "../lib/data/navigation"
 import Link from "next/link"
 import styles from "../styles/navigation.module.css"
 import { Viga } from "next/font/google"

@@ -1,14 +1,14 @@
 'use client'
 
 import styles from '../styles/bio.module.css'
-import { bio } from '../data/bio'
+import { bio } from '../lib/data/bio'
 import { Exo_2, Geist_Mono } from 'next/font/google'
 import HoverText from './ui/HoverText'
 import AnimatedProfile from './ui/AnimatedProfile'
 import AnimatedScroll from './ui/AnimatedScroll'
 import Background from './ui/Background'
 import AutoAnimatingText from './ui/AutoAnimatingText'
-import { useDeviceDetection } from '../hooks/useDeviceDetection'
+import { useDeviceDetection } from '../lib/hooks/useDeviceDetection'
 
 const geist = Geist_Mono({
     subsets: ['latin'],

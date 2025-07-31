@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useCallback } from 'react'
 import styles from '../../styles/animatedbackground.module.css'
-import { Star, Point } from '../../types'
+import { Star, Point } from '../../lib/types'
 
 export default function PassiveStarfield() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);

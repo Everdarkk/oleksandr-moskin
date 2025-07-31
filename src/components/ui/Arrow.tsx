@@ -1,4 +1,4 @@
-import { ArrowProps } from '../../types'
+import { ArrowProps } from '../../lib/types'
 import Image from 'next/image'
 import styles from '../../styles/arrow.module.css'
 

@@ -1,6 +1,6 @@
 'use client'
 
-import  {useDeviceDetection} from '../hooks/useDeviceDetection'
+import  {useDeviceDetection} from '../lib/hooks/useDeviceDetection'
 import ActiveStarfield from './ui/ActiveStarfield'
 import PassiveStarfield from './ui/PassiveStarfield'
 import styles from '../styles/animatedbackground.module.css'

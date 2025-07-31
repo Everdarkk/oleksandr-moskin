@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import styles from '../../styles/profile.module.css'
-import { AnimatedProfileProps } from '../../types' 
+import { AnimatedProfileProps } from '../../lib/types' 
 
 
 export default function AnimatedProfile({ src, alt = '', width, height, intensity = 15 }: AnimatedProfileProps) {

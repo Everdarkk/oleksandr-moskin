@@ -1,12 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import styles from '../styles/footer.module.css'
-import { Nerko_One, Grechen_Fuemen } from "next/font/google"
-
-const nerkoOne = Nerko_One({
-    subsets: ['latin'],
-    weight: ['400'],
-})
+import { Grechen_Fuemen } from "next/font/google"
 
 const grechen = Grechen_Fuemen({
     subsets: ['latin'],

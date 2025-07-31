@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState, useCallback } from 'react'
-import { AnimatedLetterProps } from '../../types'
+import { AnimatedLetterProps } from '../../lib/types'
 import styles from '../../styles/hovertext.module.css'
 
 export const allowedCharacters = ['X', '$', 'Y', '#', '?', '*', '0', '1', '+', '%', '&']

@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import Navigation from "../../lib/components/Navigation";
-import Transition from "../../lib/components/ui/Transition";
-import Footer from "../../lib/components/Footer"
+import Navigation from "@/components/Navigation"
+import Transition from "@/components/ui/Transition"
+import Footer from "@/components/Footer"
 
 
 export const metadata: Metadata = {
