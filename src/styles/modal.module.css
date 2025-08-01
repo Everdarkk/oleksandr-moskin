@@ -1,0 +1,23 @@
+
+.title {
+    color: ivory;
+}
+
+.contentWrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.image {
+    height: auto;
+}
+.image:hover {
+    cursor: zoom-out;
+}
+
+.arrowWrap {
+    width: fit-content;
+    height: fit-content;
+}

@@ -1,11 +1,11 @@
-import Gallery from "@/components/Gallery"
+import Pictures from "@/components/Pictures"
 import Transition from "@/components/ui/Transition"
 
-export default function Artwork() {
+export default function PicturesPage() {
     return (
         <>
             <Transition>
-                <Gallery />
+                <Pictures />
                 
             </Transition>
         </>

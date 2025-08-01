@@ -64,3 +64,23 @@ export interface ChromaticIconProps {
   src: string;
   hoverColor: string;
 }
+
+// -------
+
+export interface ImageItem {
+  id: string;
+  src: string;
+  alt: string;
+}
+
+export interface GalleryProps {
+  images: ImageItem[];
+  currentImageId?: string;
+}
+
+export interface ModalProps {
+  image: ImageItem;
+  onClose: () => void;
+  onNext: () => void;
+  onPrev: () => void;
+}
