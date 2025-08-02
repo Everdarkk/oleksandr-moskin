@@ -35,6 +35,6 @@ export default function Footer() {
                     Oleksandr Dorokhov
                 </span>
             </div>
-        </footer>
+        </footer> 
     )
 }

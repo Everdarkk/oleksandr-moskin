@@ -13,7 +13,7 @@ export default function Pictures() {
     <>
       <div className={styles.container}>
         {pictures.map((item, id) => (
-          <Link key={id} href={`/pictures/${id + 1}`} className={styles.card} scroll={false}>
+          <Link key={id} href={`/artwork/${id + 1}`} className={styles.card} scroll={false}>
 
             <motion.div
               className={styles.imageWrap}

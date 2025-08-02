@@ -4,7 +4,7 @@ import Modal from "@/components/Modal"
 import ModalWrap from "@/components/ModalWrap"
 
 
-export default async function PictureModalPage({
+export default async function ArtworkModalPage({
   params,
 }: {
   params: Promise<{ id: string }>

@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.title {
+    color: ivory;
+}
+
+.image {
+    width: auto;
+    height: 80dvh;
+}
+
+/* ----- BREAKPOINTS ----- */
+
+@media (max-width: 950px) {
+    .image {
+        width: 90%;
+        height: auto;
+    }
+}

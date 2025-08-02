@@ -1,7 +1,8 @@
 import Image from "next/image"
 import { pictures } from "@/lib/data/pictures"
+import styles from '@/styles/artworkpage.module.css'
 
-export default async function PictureIdPage({
+export default async function ArtworkSoloPage({
     params,
 }: {
     params: Promise<{ id: string }>
@@ -20,9 +21,9 @@ export default async function PictureIdPage({
     }
 
     return (
-        <div>
-            <div>
-                <h1 style={{color:'red'}}>{picture.alt}</h1>
+        <div className={styles.container}>
+            <div className={styles.titleWrap}>
+                <h1 className={styles.title}>{picture.alt}</h1>
             </div>
 
             <Image 
@@ -30,6 +31,7 @@ export default async function PictureIdPage({
                 alt={picture.alt}
                 width={800}
                 height={1200}
+                className={styles.image}
             />
         </div>
     )

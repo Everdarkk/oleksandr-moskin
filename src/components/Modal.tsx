@@ -38,11 +38,11 @@ export default function ModalClient({
   const next = pictures[nextIndex]
 
   function handlePrev() {
-    router.replace(`/pictures/${previous.id}`, { scroll: false })
+    router.replace(`/artwork/${previous.id}`, { scroll: false })
   }
 
   function handleNext() {
-    router.replace(`/pictures/${next.id}`, { scroll: false })
+    router.replace(`/artwork/${next.id}`, { scroll: false })
   }
 
   return (
@@ -56,16 +56,14 @@ export default function ModalClient({
           <ArrowL/>
         </div>
 
-        <Transition>
-          <Image
-            src={picture.src}
-            alt={picture.alt}
-            width={800}
-            height={1200}
-            onClick={onDismiss}
-            className={styles.image}
-          />
-        </Transition>
+        <Image
+          src={picture.src}
+          alt={picture.alt}
+          width={800}
+          height={1200}
+          onClick={onDismiss}
+          className={styles.image}
+        />
 
         <div className={styles.arrowWrap} onClick={handleNext}>
           <ArrowR />

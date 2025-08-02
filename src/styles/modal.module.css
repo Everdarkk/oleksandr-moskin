@@ -5,6 +5,7 @@
 
 .contentWrap {
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -12,6 +13,7 @@
 
 .image {
     height: auto;
+
 }
 .image:hover {
     cursor: zoom-out;
@@ -20,4 +22,18 @@
 .arrowWrap {
     width: fit-content;
     height: fit-content;
+}
+
+/* ----- BREAKPOINTS ------ */
+
+@media (max-width: 950px) {
+    .image {
+        width: 90%;
+    }
+}
+
+@media (max-width: 450px) {
+    .image {
+        width: 80%;
+    }
 }
