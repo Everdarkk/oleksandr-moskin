@@ -56,14 +56,16 @@ export default function ModalClient({
           <ArrowL/>
         </div>
 
-        <Image
-          src={picture.src}
-          alt={picture.alt}
-          width={800}
-          height={1200}
-          onClick={onDismiss}
-          className={styles.image}
-        />
+        <Transition>
+          <Image
+            src={picture.src}
+            alt={picture.alt}
+            width={800}
+            height={1200}
+            onClick={onDismiss}
+            className={styles.image}
+          />
+        </Transition>
 
         <div className={styles.arrowWrap} onClick={handleNext}>
           <ArrowR />

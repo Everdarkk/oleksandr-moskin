@@ -24,9 +24,13 @@ export default function RootLayout({
           <Navigation/>
         </Transition>
 
-        {children}
-        {modal}
+        <div className='content'>
+          {children}
+          {modal}
+        </div>
+        
         <Footer/>
+        
       </body>
       
     </html>

@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { pictures } from "@/lib/data/pictures"
 import styles from '@/styles/artworkpage.module.css'
+import { notFound } from "next/navigation"
 
 export default async function ArtworkSoloPage({
     params,
@@ -11,13 +12,7 @@ export default async function ArtworkSoloPage({
     const picture = pictures.find((pic) => pic.id === id)
     
     if (!picture) {
-        return (
-            <div>
-                <div>
-                    <h1>Picture not found</h1>
-                </div>
-            </div>
-        )
+        return notFound()
     }
 
     return (
