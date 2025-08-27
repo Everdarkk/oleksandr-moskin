@@ -12,7 +12,9 @@
 }
 
 .image {
-    height: auto;
+
+    object-fit: contain;
+    
 
 }
 .image:hover {
