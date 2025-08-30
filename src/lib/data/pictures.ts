@@ -26,5 +26,4 @@ export const pictures: ImageItem[] = [
     { id: '23', src: '/images/pictures/23.jpg', alt: 'Artwork 23' },
     { id: '24', src: '/images/pictures/24.jpg', alt: 'Artwork 24' },
     { id: '25', src: '/images/pictures/25.jpg', alt: 'Artwork 25' },
-    { id: '26', src: '/images/pictures/26.jpg', alt: 'Artwork 26' },
 ]

@@ -10,6 +10,7 @@ import ArrowL from "@/components/ui/ArrowL"
 import ArrowR from "@/components/ui/ArrowR"
 import { pictures } from "@/lib/data/pictures"
 import Transition from "@/components/ui/Transition"
+import { motion } from "framer-motion"
 
 export default function ModalClient({ 
   picture, 
@@ -57,14 +58,47 @@ export default function ModalClient({
         </div>
 
         <Transition>
-          <Image
+          {/* <Image
             src={picture.src}
             alt={picture.alt}
             width={800}
             height={1200}
             onClick={onDismiss}
             className={styles.image}
-          />
+          /> */}
+
+          <motion.div
+              className={styles.imageWrap}
+              whileHover="hover"
+              initial="rest"
+              animate="rest"
+            >
+              <motion.div
+                className={styles.imageMotion}
+              >
+                <Image
+                  src={picture.src}
+                  alt={picture.alt}
+                  width={1000}
+                  height={1200}
+                  onClick={onDismiss}
+                  className={styles.image}
+                />
+
+                <motion.div
+                className={styles.overlay}
+                variants={{
+                  rest: { y: "100%", opacity: 0 },
+                  hover: { y: "0%", opacity: 1 },
+                }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                <div className={styles.caption}>{picture.alt}</div>
+                </motion.div>
+              </motion.div>
+
+              
+            </motion.div>
         </Transition>
 
         <div className={styles.arrowWrap} onClick={handleNext}>
