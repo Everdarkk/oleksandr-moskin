@@ -32,7 +32,7 @@
     max-width: 100%;
     height: 100%;
     width: 100%;
-    overflow: hidden; 
+    overflow: hidden;
     line-height: 0;
 }
 
@@ -41,26 +41,50 @@
     object-fit: contain !important;
     width: 100%;
     height: 100%;
+    transition: filter 0.2s ease; /* Плавний перехід для блюру */
 }
 
+/* Стилі для оверлея з текстом */
 .overlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 35%; 
-    background: rgba(0, 0, 0, 0.6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрування по горизонталі та вертикалі */
+    max-width: 40rem; /* Обмеження ширини, щоб не займав весь простір */
+    padding: 1.5rem 2.5rem; /* Збільшений відступ для кращого вигляду */
+    background-color: rgba(0, 0, 0, 0);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    pointer-events: none;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    backdrop-filter: blur(0);
+    border-radius: 10px; /* Додаємо закруглені кути для естетики */
 }
 
-.caption {
-    color: white;
+/* Стилі для тексту всередині оверлея */
+.descriptionText {
+    color: ivory;
     font-size: 1.2rem;
-    text-align: center;
-    padding: 0 1rem;
+    line-height: 1.4;
+}
+.descriptionMats {
+    color: ivory;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/* Анімація при наведенні */
+.imageContainer:hover img {
+    filter: blur(5px) brightness(0.7);
+    cursor: zoom-out;
+}
+
+.imageContainer:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    backdrop-filter: blur(5px);
 }
 
 .arrowWrap {

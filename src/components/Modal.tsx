@@ -9,7 +9,7 @@ import ArrowL from "@/components/ui/ArrowL";
 import ArrowR from "@/components/ui/ArrowR";
 import { pictures } from "@/lib/data/pictures";
 import Transition from "@/components/ui/Transition";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 export default function ModalClient({ 
   picture, 
@@ -57,34 +57,24 @@ export default function ModalClient({
             <ArrowL/>
           </div>
 
-          <motion.div
-            className={styles.imageContainer}
-            whileHover="hover"
-            initial="rest"
-            animate="rest"
-          >
-            <Image
-              src={picture.src}
-              alt={picture.alt}
-              fill
-              onClick={onDismiss}
-              priority
-            />
-
-            <motion.div
-              className={styles.overlay}
-              variants={{
-                rest: { y: "100%", opacity: 0 },
-                hover: { y: "0%", opacity: 1 },
-              }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-            >
-              <div className={styles.caption}>
-                {picture.materials}
-                {picture.description}
+          <div className={styles.imageContainer}>
+            <Transition>
+              <Image
+                src={picture.src}
+                alt={picture.alt}
+                fill
+                onClick={onDismiss}
+                priority
+              />
+            </Transition>
+            
+            {picture.description && (
+              <div className={styles.overlay}>
+                <p className={styles.descriptionMats}>{picture.materials}</p>
+                <p className={styles.descriptionText}>{picture.description}</p>
               </div>
-            </motion.div>
-          </motion.div>
+            )}
+          </div>
 
           <div className={styles.arrowWrap} onClick={handleNext}>
             <ArrowR />
