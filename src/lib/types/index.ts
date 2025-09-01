@@ -71,6 +71,8 @@ export interface ImageItem {
   id: string;
   src: string;
   alt: string;
+  description: string;
+  materials: string;
 }
 
 export interface GalleryProps {
