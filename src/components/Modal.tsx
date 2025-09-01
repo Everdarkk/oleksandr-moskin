@@ -79,7 +79,10 @@ export default function ModalClient({
               }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              <div className={styles.caption}>{picture.alt}</div>
+              <div className={styles.caption}>
+                {picture.materials}
+                {picture.description}
+              </div>
             </motion.div>
           </motion.div>
 
