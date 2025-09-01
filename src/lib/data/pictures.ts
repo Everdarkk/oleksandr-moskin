@@ -19,7 +19,7 @@ export const pictures: ImageItem[] = [
     { id: '16', src: '/images/pictures/16.jpeg', alt: 'Artwork 16' },
     { id: '17', src: '/images/pictures/17.jpeg', alt: 'Artwork 17' },
     { id: '18', src: '/images/pictures/18.jpeg', alt: 'Artwork 18' },
-    { id: '19', src: '/images/pictures/19.jpg', alt: 'Artwork 19' },
+    { id: '19', src: '/images/pictures/19.png', alt: 'Artwork 19' },
     { id: '20', src: '/images/pictures/20.jpg', alt: 'Artwork 20' },
     { id: '21', src: '/images/pictures/21.jpg', alt: 'Artwork 21' },
     { id: '22', src: '/images/pictures/22.jpg', alt: 'Artwork 22' },
