@@ -13,7 +13,7 @@ import { useDeviceDetection } from '../lib/hooks/useDeviceDetection'
 const geist = Geist_Mono({
     subsets: ['latin'],
     weight: ['400'],
-    variable: '--font-cousine',
+    variable: '--font-geist',
     display: 'swap',
 })
 
@@ -22,7 +22,7 @@ const exo = Exo_2({
     weight: ['400'],
     variable: '--font-exo',
     display: 'swap',
-})
+}) 
 
 export default function Bio() {
     const { isMobile } = useDeviceDetection()

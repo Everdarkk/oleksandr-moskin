@@ -3,7 +3,7 @@
 import {useRef, useEffect} from 'react'
 import styles from '@/styles/modalwrap.module.css'
 
-export default function Modal({ children,}: { children: React.ReactNode}) {
+export default function ModalWrap({ children,}: { children: React.ReactNode}) {
   const modalRef = useRef(null)
 
   useEffect(() => {

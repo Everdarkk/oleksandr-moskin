@@ -49,9 +49,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Центрування по горизонталі та вертикалі */
-    max-width: 40rem; /* Обмеження ширини, щоб не займав весь простір */
-    padding: 1.5rem 2.5rem; /* Збільшений відступ для кращого вигляду */
+    transform: translate(-50%, -50%);
+    max-width: 40rem;
+    padding: 1.5rem 2.5rem;
     background-color: rgba(0, 0, 0, 0);
     display: flex;
     flex-direction: column;
@@ -60,13 +60,13 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
     backdrop-filter: blur(0);
-    border-radius: 10px; /* Додаємо закруглені кути для естетики */
+    border-radius: 10px;
 }
 
 /* Стилі для тексту всередині оверлея */
 .descriptionText {
     color: ivory;
-    font-size: 1.2rem;
+    font-size: clamp(0.3rem,2vw, 1.2rem);
     line-height: 1.4;
 }
 .descriptionMats {
@@ -91,4 +91,28 @@
     cursor: pointer;
     padding: 1rem;
     flex-shrink: 0;
+}
+
+/* ----- BREAKPOINTS ----- */
+
+@media (max-width: 450px) {
+    .overlay {
+       width: 100%;
+       min-height: 15rem;
+    }
+
+    .modalLayout {
+        padding: 0;
+    }
+
+    .title {
+        position: absolute;
+        top: 0;
+        text-align: center;
+        inset-inline: 0;
+    }
+
+    .arrowWrap {
+        padding: 0;
+    }
 }

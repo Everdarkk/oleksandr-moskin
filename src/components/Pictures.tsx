@@ -5,13 +5,22 @@ import Image from "next/image"
 import styles from "../styles/gallery.module.css"
 import {motion} from 'motion/react'
 import Link from "next/link"
+import { Geist_Mono } from "next/font/google";
+import AutoAnimatingText from "./ui/AutoAnimatingText"
+
+const geist = Geist_Mono({
+    subsets: ['latin'],
+    weight: ['400'],
+    variable: '--font-geist',
+    display: 'swap',
+})
 
 export default function Pictures() {
 
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={`${geist.className} ${styles.container}`}>
         {pictures.map((item, id) => (
           <Link key={id} href={`/artwork/${id + 1}`} className={styles.card} scroll={false}>
 
@@ -45,7 +54,9 @@ export default function Pictures() {
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >
-                <div className={styles.caption}>{item.alt}</div>
+                <div className={styles.caption}>
+                  <AutoAnimatingText>{item.alt}</AutoAnimatingText>
+                </div>
               </motion.div>
             </motion.div>
 

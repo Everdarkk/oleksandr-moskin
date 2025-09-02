@@ -9,7 +9,15 @@ import ArrowL from "@/components/ui/ArrowL";
 import ArrowR from "@/components/ui/ArrowR";
 import { pictures } from "@/lib/data/pictures";
 import Transition from "@/components/ui/Transition";
-// import { motion } from "framer-motion";
+import { Geist_Mono } from "next/font/google";
+import AutoAnimatingText from "./ui/AutoAnimatingText";
+
+const geist = Geist_Mono({
+    subsets: ['latin'],
+    weight: ['400'],
+    variable: '--font-geist',
+    display: 'swap',
+})
 
 export default function ModalClient({ 
   picture, 
@@ -47,7 +55,7 @@ export default function ModalClient({
 
   return (
     <ModalWrap>
-      <div className={styles.modalLayout}>
+      <div className={`${geist.className} ${styles.modalLayout}`}>
         <Transition>
           <h2 className={styles.title}>{picture.alt}</h2>
         </Transition>
@@ -63,6 +71,7 @@ export default function ModalClient({
                 src={picture.src}
                 alt={picture.alt}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 onClick={onDismiss}
                 priority
               />
@@ -71,7 +80,11 @@ export default function ModalClient({
             {picture.description && (
               <div className={styles.overlay}>
                 <p className={styles.descriptionMats}>{picture.materials}</p>
-                <p className={styles.descriptionText}>{picture.description}</p>
+                <div className={styles.descriptionText}>
+                  <AutoAnimatingText>
+                    {picture.description}
+                  </AutoAnimatingText>
+                </div>
               </div>
             )}
           </div>
