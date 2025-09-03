@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   background: black;
+  gap: 0.5rem;
 }
 
 .card {
