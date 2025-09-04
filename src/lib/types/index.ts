@@ -73,6 +73,8 @@ export interface ImageItem {
   alt: string;
   description: string;
   materials: string;
+  width: number;
+  height: number;
 }
 
 export interface GalleryProps {

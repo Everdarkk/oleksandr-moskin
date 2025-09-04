@@ -71,7 +71,7 @@ export default function ModalClient({
                 src={picture.src}
                 alt={picture.alt}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+                sizes="(max-width: 450px) 100vw, 80vw"
                 onClick={onDismiss}
                 priority
               />

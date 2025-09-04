@@ -4,12 +4,15 @@
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    padding: 2rem;
+    /* padding: 2rem; */
     box-sizing: border-box;
     position: relative;
 }
 
 .title {
+    position: absolute;
+    top: 0.5rem;
+    inset-inline: 0;
     color: ivory;
     text-align: center;
     margin-bottom: 1rem;
@@ -20,29 +23,32 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1rem;
-    
     flex-grow: 1; 
-    min-height: 0; 
+    min-height: 0;
 }
 
 .imageContainer {
     position: relative;
-    max-height: 100%;
-    max-width: 100%;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    max-width: 90vw;
+    max-height: 90vh;
     overflow: hidden;
     line-height: 0;
+    display: inline-block;
 }
 
 
 .imageContainer img {
     object-fit: contain !important;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     transition: filter 0.2s ease;
+    background-color: transparent;
 }
 
 /* Стилі для оверлея з текстом */
@@ -51,7 +57,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 40rem;
+    max-width: 30rem;
     padding: 1.5rem 2.5rem;
     background-color: rgba(0, 0, 0, 0);
     display: flex;
@@ -96,7 +102,7 @@
 
 /* ----- BREAKPOINTS ----- */
 
-@media (max-width: 450px) {
+@media (max-width: 540px) {
     .overlay {
        width: 100%;
        min-height: 15rem;
