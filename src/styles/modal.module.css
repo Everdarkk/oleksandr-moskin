@@ -48,7 +48,6 @@
     width: auto;
     height: auto;
     transition: filter 0.2s ease;
-    background-color: transparent;
 }
 
 /* Стилі для оверлея з текстом */
@@ -80,6 +79,7 @@
     color: ivory;
     font-size: clamp(0.8rem,2vw, 1.2rem);
     line-height: 1.4;
+    text-align: center;
 }
 
 /* Анімація при наведенні */

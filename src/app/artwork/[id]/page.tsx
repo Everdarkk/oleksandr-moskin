@@ -3,6 +3,10 @@ import { pictures } from "@/lib/data/pictures"
 import styles from '@/styles/artworkpage.module.css'
 import { notFound } from "next/navigation"
 
+export async function generateStaticParams() {
+  return pictures.map((pic) => ({ id: pic.id }))
+}
+
 export default async function ArtworkSoloPage({
     params,
 }: {
@@ -17,17 +21,33 @@ export default async function ArtworkSoloPage({
 
     return (
         <div className={styles.container}>
-            <div className={styles.titleWrap}>
-                <h1 className={styles.title}>{picture.alt}</h1>
-            </div>
+            <p className={styles.title}>
+                {picture.alt}
+            </p>
 
-            <Image 
-                src={picture.src}
-                alt={picture.alt}
-                width={800}
-                height={1200}
-                className={styles.image}
-            />
+            <div className={styles.contentWrap}>
+                <Image
+                    src={picture.src}
+                    alt={picture.alt}
+                    width={picture.width}
+                    height={picture.height}
+                    className={styles.image}
+                    priority
+                />
+
+                <div className={styles.textWrap}>
+                    <p className={styles.materials}>
+                        {picture.materials}
+                    </p>
+
+                    <p className={styles.description}>
+                        {picture.description}
+                    </p>
+
+                </div>
+            </div>
+            
+        
         </div>
     )
 }
