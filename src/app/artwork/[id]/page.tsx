@@ -2,6 +2,14 @@ import Image from "next/image"
 import { pictures } from "@/lib/data/pictures"
 import styles from '@/styles/artworkpage.module.css'
 import { notFound } from "next/navigation"
+import { Geist_Mono } from "next/font/google"
+
+const geist = Geist_Mono({
+    subsets: ['latin'],
+    weight: ['400'],
+    variable: '--font-geist',
+    display: 'swap',
+})
 
 export async function generateStaticParams() {
   return pictures.map((pic) => ({ id: pic.id }))
@@ -20,34 +28,34 @@ export default async function ArtworkSoloPage({
     }
 
     return (
-        <div className={styles.container}>
-            <p className={styles.title}>
-                {picture.alt}
-            </p>
-
-            <div className={styles.contentWrap}>
-                <Image
-                    src={picture.src}
-                    alt={picture.alt}
-                    width={picture.width}
-                    height={picture.height}
-                    className={styles.image}
-                    priority
-                />
-
-                <div className={styles.textWrap}>
-                    <p className={styles.materials}>
-                        {picture.materials}
-                    </p>
-
-                    <p className={styles.description}>
-                        {picture.description}
-                    </p>
-
+        <>
+            <div className={`${geist.className} ${styles.container}`}>
+                <p className={styles.title}>
+                    {picture.alt}
+                </p>
+                <div className={styles.contentWrap}>
+                    <div className={styles.imageWrap}>
+                        <Image
+                            src={picture.src}
+                            alt={picture.alt}
+                            width={picture.width}
+                            height={picture.height}
+                            className={styles.image}
+                            priority
+                        />
+                    </div>
+                    <div className={styles.textWrap}>
+                        <p className={styles.materials}>
+                            {picture.materials}
+                        </p>
+                        <p className={styles.description}>
+                            {picture.description}
+                        </p>
+                    </div>
                 </div>
-            </div>
             
-        
-        </div>
+            
+            </div>
+        </>
     )
 }
