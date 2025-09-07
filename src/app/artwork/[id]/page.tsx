@@ -33,6 +33,7 @@ export default async function ArtworkSoloPage({
                 <p className={styles.title}>
                     {picture.alt}
                 </p>
+                
                 <div className={styles.contentWrap}>
                     <div className={styles.imageWrap}>
                         <Image

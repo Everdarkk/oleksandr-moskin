@@ -13,7 +13,9 @@
 
 @media (max-width: 450px) {
     .container {
-        width: 80%;
+        width: 100%;
         align-self: center;
+        text-align: center;
+        padding: 1rem;
     }
 }

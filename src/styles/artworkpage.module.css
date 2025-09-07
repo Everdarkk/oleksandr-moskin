@@ -56,3 +56,25 @@
 }
 
 /* ----- BREAKPOINTS ----- */
+
+@media (max-width: 750px) {
+    .container {
+        height: 100%;
+    }
+    
+    .contentWrap {
+        flex-direction: column;
+    }
+
+    .imageWrap {
+        max-width: 85dvw;
+    }
+
+    .textWrap {
+        max-width: 90%;
+    }
+
+    .materials {
+        text-align: center;
+    }
+}
