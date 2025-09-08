@@ -36,9 +36,10 @@
 .contentWrap {
     display: flex;
     align-items: center; 
-    justify-content: space-around;
+    justify-content: center;
     align-self: center;
     justify-self: center;
+    gap: 5vw;
     width: 100%;
     height: 100%;
 }
