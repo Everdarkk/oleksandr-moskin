@@ -65,4 +65,15 @@
     .text {
         display: none;
     }
+
+    .image {
+        padding: 0.5rem;
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+    }
+    .image:hover {
+        transform: scale(0);
+        animation: none;
+        animation-iteration-count: none;
+    }
 }
