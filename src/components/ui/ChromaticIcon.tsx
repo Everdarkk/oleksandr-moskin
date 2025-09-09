@@ -6,7 +6,7 @@ import styles from '../../styles/chromaticicon.module.css'
 export default function ChromaticIcon({href, ariaLabel, src, hoverColor}: ChromaticIconProps) {
 
     return (
-        <Link href={href} aria-label={ariaLabel} className={styles.container} style={{ '--hover-color': hoverColor } as React.CSSProperties}>
+        <Link href={href} target="_blank" aria-label={ariaLabel} className={styles.container} style={{ '--hover-color': hoverColor } as React.CSSProperties}>
             <div className={styles.iconContainer}>
                 <Image
                     width={512}
