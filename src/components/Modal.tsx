@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import { ImageItem } from "@/lib/types";
-import Image from "next/image";
-import styles from '@/styles/modal.module.css';
-import { useRouter } from 'next/navigation';
-import ModalWrap from '@/components/ModalWrap';
-import ArrowL from "@/components/ui/ArrowL";
-import ArrowR from "@/components/ui/ArrowR";
-import { pictures } from "@/lib/data/pictures";
-import Transition from "@/components/ui/Transition";
-import { Geist_Mono } from "next/font/google";
-import AutoAnimatingText from "./ui/AutoAnimatingText";
+import { ImageItem } from "@/lib/types"
+import Image from "next/image"
+import styles from '@/styles/modal.module.css'
+import { useRouter } from 'next/navigation'
+import ModalWrap from '@/components/ModalWrap'
+import ArrowL from "@/components/ui/ArrowL"
+import ArrowR from "@/components/ui/ArrowR"
+import { pictures } from "@/lib/data/pictures"
+import Transition from "@/components/ui/Transition"
+import { Geist_Mono } from "next/font/google"
+
 
 const geist = Geist_Mono({
     subsets: ['latin'],
@@ -27,7 +27,7 @@ export default function ModalClient({
   const router = useRouter();
 
   const onDismiss = () => {
-    router.back();
+    router.back()
   };
 
   if (!picture) {
@@ -38,19 +38,19 @@ export default function ModalClient({
     );
   }
 
-  const currentIndex = pictures.findIndex(item => item.id === picture.id);
-  const previousIndex = currentIndex > 0 ? currentIndex - 1 : pictures.length - 1;
-  const nextIndex = currentIndex < pictures.length - 1 ? currentIndex + 1 : 0;
+  const currentIndex = pictures.findIndex(item => item.id === picture.id)
+  const previousIndex = currentIndex > 0 ? currentIndex - 1 : pictures.length - 1
+  const nextIndex = currentIndex < pictures.length - 1 ? currentIndex + 1 : 0
 
-  const previous = pictures[previousIndex];
-  const next = pictures[nextIndex];
+  const previous = pictures[previousIndex]
+  const next = pictures[nextIndex]
 
   function handlePrev() {
-    router.replace(`/artwork/${previous.id}`, { scroll: false });
+    router.replace(`/artwork/${previous.id}`, { scroll: false })
   }
 
   function handleNext() {
-    router.replace(`/artwork/${next.id}`, { scroll: false });
+    router.replace(`/artwork/${next.id}`, { scroll: false })
   }
 
   return (
@@ -81,9 +81,7 @@ export default function ModalClient({
               <div className={styles.overlay}>
                 <p className={styles.descriptionMats}>{picture.materials}</p>
                 <div className={styles.descriptionText}>
-                  <AutoAnimatingText>
-                    {picture.description}
-                  </AutoAnimatingText>
+                  {picture.description}
                 </div>
               </div>
             )}

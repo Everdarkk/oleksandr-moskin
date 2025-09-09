@@ -66,7 +66,8 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
     backdrop-filter: blur(0);
-    border-radius: 10px;
+    gap: 1rem;
+    border-radius: 0.6rem;
 }
 
 /* Стилі для тексту всередині оверлея */

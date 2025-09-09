@@ -6,7 +6,7 @@ export default function MaskedImage () {
         <div className={styles.container}>
             
             <video 
-                    src={'videos/oleksandr-5.mp4'}
+                    src={'videos/oleksandr-1.mp4'}
                     autoPlay 
                     muted 
                     loop 
