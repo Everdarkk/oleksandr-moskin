@@ -8,8 +8,8 @@
 .video {
     width: clamp(50rem, 90vw, 90rem);
     height: auto;
-    -webkit-mask-image: url('/utils/mask-6.png');
-    mask-image: url('/utils/mask-6.png');
+    -webkit-mask-image: url('/utils/mask-6.webp');
+    mask-image: url('/utils/mask-6.webp');
   
     -webkit-mask-size: contain;
     mask-size: contain;

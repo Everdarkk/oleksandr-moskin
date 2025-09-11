@@ -70,7 +70,6 @@
     border-radius: 0.6rem;
 }
 
-/* Стилі для тексту всередині оверлея */
 .descriptionText {
     color: ivory;
     font-size: clamp(0.7rem,2vw, 1.2rem);
@@ -83,7 +82,6 @@
     text-align: center;
 }
 
-/* Анімація при наведенні */
 .imageContainer:hover img {
     filter: blur(5px) brightness(0.7);
     cursor: zoom-out;
