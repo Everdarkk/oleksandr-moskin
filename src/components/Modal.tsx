@@ -95,6 +95,6 @@ export default function ModalClient({
           </div>
         </div>
       </div>
-    </ModalWrap>
+    </ModalWrap>  
   );
 }

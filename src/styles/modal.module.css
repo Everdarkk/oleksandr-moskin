@@ -31,7 +31,7 @@
 
 .imageContainer {
     position: relative;
-    width: 100%;
+    width: 60%;
     height: 100%;
     max-width: 90vw;
     max-height: 90vh;
@@ -122,5 +122,13 @@
 
     .arrowWrap {
         padding: 0;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    
+    .imageContainer {
+        width: 100%;
     }
 }
