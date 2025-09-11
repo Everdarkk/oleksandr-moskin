@@ -8,7 +8,6 @@ import ModalWrap from '@/components/ModalWrap'
 import ArrowL from "@/components/ui/ArrowL"
 import ArrowR from "@/components/ui/ArrowR"
 import { pictures } from "@/lib/data/pictures"
-import Transition from "@/components/ui/Transition"
 import { Geist_Mono } from "next/font/google"
 import { useEffect } from "react"
 
