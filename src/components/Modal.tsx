@@ -65,9 +65,7 @@ export default function ModalClient({
   return (
     <ModalWrap>
       <div className={`${geist.className} ${styles.modalLayout}`}>
-        <Transition>
           <h2 className={styles.title}>{picture.alt}</h2>
-        </Transition>
 
         <div className={styles.contentWrap}>
           <div className={styles.arrowWrap} onClick={handlePrev}>
@@ -75,7 +73,6 @@ export default function ModalClient({
           </div>
 
           <div className={styles.imageContainer}>
-            <Transition>
               <Image
                 src={picture.src}
                 alt={picture.alt}
@@ -83,7 +80,6 @@ export default function ModalClient({
                 sizes="80vw"
                 onClick={onDismiss}
               />
-            </Transition>
             
             {picture.description && (
               <div className={styles.overlay}>
