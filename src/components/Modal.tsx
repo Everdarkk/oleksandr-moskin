@@ -10,6 +10,7 @@ import ArrowR from "@/components/ui/ArrowR"
 import { pictures } from "@/lib/data/pictures"
 import Transition from "@/components/ui/Transition"
 import { Geist_Mono } from "next/font/google"
+import { useEffect } from "react"
 
 
 const geist = Geist_Mono({
@@ -25,10 +26,25 @@ export default function ModalClient({
   picture: ImageItem | undefined
 }) {
   const router = useRouter();
+  const currentIndex = pictures.findIndex(item => item.id === picture?.id)
+  const previousIndex = currentIndex > 0 ? currentIndex - 1 : pictures.length - 1
+  const nextIndex = currentIndex < pictures.length - 1 ? currentIndex + 1 : 0
+
+  const previous = pictures[previousIndex]
+  const next = pictures[nextIndex]
 
   const onDismiss = () => {
     router.back()
   };
+
+  useEffect(() => {
+    if (next) {
+      router.prefetch(`/artwork/${next.id}`);
+    }
+    if (previous) {
+      router.prefetch(`/artwork/${previous.id}`);
+    }
+  }, [next, previous, router]);
 
   if (!picture) {
     return (
@@ -37,13 +53,6 @@ export default function ModalClient({
       </ModalWrap>
     );
   }
-
-  const currentIndex = pictures.findIndex(item => item.id === picture.id)
-  const previousIndex = currentIndex > 0 ? currentIndex - 1 : pictures.length - 1
-  const nextIndex = currentIndex < pictures.length - 1 ? currentIndex + 1 : 0
-
-  const previous = pictures[previousIndex]
-  const next = pictures[nextIndex]
 
   function handlePrev() {
     router.replace(`/artwork/${previous.id}`, { scroll: false })
@@ -71,9 +80,8 @@ export default function ModalClient({
                 src={picture.src}
                 alt={picture.alt}
                 fill
-                sizes="(max-width: 450px) 100vw, 80vw"
+                sizes="80vw"
                 onClick={onDismiss}
-                priority
               />
             </Transition>
             
