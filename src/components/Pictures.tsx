@@ -7,6 +7,8 @@ import {motion} from 'motion/react'
 import Link from "next/link"
 import { Geist_Mono } from "next/font/google";
 import AutoAnimatingText from "./ui/AutoAnimatingText"
+import { useDeviceDetection } from "@/lib/hooks/useDeviceDetection"
+import { useRouter } from "next/navigation"
 
 const geist = Geist_Mono({
     subsets: ['latin'],
@@ -16,9 +18,12 @@ const geist = Geist_Mono({
 })
 
 export default function Pictures() {
+  const {isMobile} = useDeviceDetection()
+  console.log("isMobile:", isMobile)
+  const router = useRouter()
 
-
-  return (
+  if (!isMobile) {
+    return (
     <>
       <div className={`${geist.className} ${styles.container}`}>
         {pictures.map((item, id) => (
@@ -68,4 +73,35 @@ export default function Pictures() {
 
     </>
   )
+  } else {
+    return (
+      <div className={`${geist.className} ${styles.container}`}>
+        {pictures.map((item, id) => (
+          <Link 
+            key={id} 
+            href={`/artwork/${id + 1}`} 
+            className={styles.card}
+            onClick={(e) => {
+              e.preventDefault()
+              router.push(`/artwork/${id + 1}`, {scroll: false})
+            }}
+          >
+
+            <div className={styles.imageWrapMobile}>
+              <div className={styles.imageMotionMobile}>
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={id < 10}
+                  className={styles.imageMobile}
+                />
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    )
+  }
 }
