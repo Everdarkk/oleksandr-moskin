@@ -83,7 +83,7 @@
 }
 
 .imageContainer:hover img {
-    filter: blur(5px) brightness(0.7);
+    /* filter: blur(5px) brightness(0.7); */
     cursor: zoom-out;
 }
 

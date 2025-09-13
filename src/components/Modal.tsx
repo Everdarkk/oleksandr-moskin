@@ -20,11 +20,11 @@ const geist = Geist_Mono({
 })
 
 export default function ModalClient({ 
-  picture, 
-}: { 
+  picture }: { 
   picture: ImageItem | undefined
-}) {
-  const router = useRouter();
+  }) {
+
+  const router = useRouter()
   const currentIndex = pictures.findIndex(item => item.id === picture?.id)
   const previousIndex = currentIndex > 0 ? currentIndex - 1 : pictures.length - 1
   const nextIndex = currentIndex < pictures.length - 1 ? currentIndex + 1 : 0
@@ -34,7 +34,8 @@ export default function ModalClient({
 
   const onDismiss = () => {
     router.back()
-  };
+  }
+
 
   useEffect(() => {
     if (next) {
@@ -81,7 +82,10 @@ export default function ModalClient({
               />
             
             {picture.description && (
-              <div className={styles.overlay}>
+              <div 
+                className={styles.overlay}
+                
+              >
                 <p className={styles.descriptionMats}>{picture.materials}</p>
                 <div className={styles.descriptionText}>
                   {picture.description}
