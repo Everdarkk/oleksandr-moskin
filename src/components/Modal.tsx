@@ -65,7 +65,7 @@ export default function ModalClient({
   return (
     <ModalWrap>
       <div className={`${geist.className} ${styles.modalLayout}`}>
-          <h2 className={styles.title}>{picture.alt}</h2>
+        <h2 className={styles.title}>{picture.alt}</h2>
 
         <div className={styles.contentWrap}>
           <div className={styles.arrowWrap} onClick={handlePrev}>
