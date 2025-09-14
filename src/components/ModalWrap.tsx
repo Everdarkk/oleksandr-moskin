@@ -3,8 +3,10 @@
 import {useRef, useEffect} from 'react'
 import styles from '@/styles/modalwrap.module.css'
 
+
 export default function ModalWrap({ children,}: { children: React.ReactNode}) {
   const modalRef = useRef(null)
+  
 
   useEffect(() => {
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth

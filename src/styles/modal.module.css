@@ -18,7 +18,12 @@
     flex-shrink: 0;
     padding-inline: 1rem;
     padding-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }
+
 
 .contentWrap {
     width: 100%;
@@ -32,7 +37,7 @@
 
 .imageContainer {
     position: relative;
-    width: 60%;
+    width: 100%;
     height: 100%;
     max-width: 90vw;
     max-height: 90vh;
@@ -52,6 +57,7 @@
 }
 
 /* Стилі для оверлея з текстом */
+
 .overlay {
     position: absolute;
     top: 50%;
@@ -61,7 +67,7 @@
     height: 100%;
     padding: 1.5rem 2.5rem;
     background-color: rgba(0, 0, 0, 0);
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -90,6 +96,7 @@
 }
 
 .imageContainer:hover .overlay {
+    display: flex;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
     backdrop-filter: blur(5px);

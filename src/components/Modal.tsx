@@ -9,7 +9,8 @@ import ArrowL from "@/components/ui/ArrowL"
 import ArrowR from "@/components/ui/ArrowR"
 import { pictures } from "@/lib/data/pictures"
 import { Geist_Mono } from "next/font/google"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { useDeviceDetection } from "@/lib/hooks/useDeviceDetection"
 
 
 const geist = Geist_Mono({
@@ -31,11 +32,29 @@ export default function ModalClient({
 
   const previous = pictures[previousIndex]
   const next = pictures[nextIndex]
-
+  const [visible, setVisible] = useState(false)
+  const { isMobile } = useDeviceDetection()
+  
   const onDismiss = () => {
     router.back()
   }
+  const onOverlay = () => {
+   if (!isMobile) {
+     router.back()
+   } else {
+      return
+   }
+  }
 
+  const onWrap = () => {
+    if (isMobile) {
+      setVisible(!visible)
+    } else {
+      return
+    }
+  }
+ 
+  
 
   useEffect(() => {
     if (next) {
@@ -65,7 +84,16 @@ export default function ModalClient({
   return (
     <ModalWrap>
       <div className={`${geist.className} ${styles.modalLayout}`}>
-        <h2 className={styles.title}>{picture.alt}</h2>
+        <h2 className={styles.title}>
+          {picture.alt}
+          <span 
+            className={styles.back} 
+            onClick={onDismiss}
+            style={!isMobile ? {display: 'none'} : {display: 'block'}}
+          >
+            ↩
+          </span>
+        </h2>
 
         <div className={styles.contentWrap}>
           <div className={styles.arrowWrap} onClick={handlePrev}>
@@ -82,13 +110,17 @@ export default function ModalClient({
               />
             
             {picture.description && (
-              <div 
-                className={styles.overlay}
-                
-              >
-                <p className={styles.descriptionMats}>{picture.materials}</p>
-                <div className={styles.descriptionText}>
-                  {picture.description}
+              <div onClick={onWrap} className={styles.overlayWrap}>
+                <div
+                  className={styles.overlay}
+                  style={ visible ? {opacity: '1'} : {opacity: '0'}}
+                  onClick={onOverlay}
+                  
+                >
+                  <p className={styles.descriptionMats}>{picture.materials}</p>
+                  <div className={styles.descriptionText}>
+                    {picture.description}
+                  </div>
                 </div>
               </div>
             )}
