@@ -11,6 +11,7 @@ import { pictures } from "@/lib/data/pictures"
 import { Geist_Mono } from "next/font/google"
 import { useEffect, useState } from "react"
 import { useDeviceDetection } from "@/lib/hooks/useDeviceDetection"
+import Transition from "./ui/Transition"
 
 
 const geist = Geist_Mono({
@@ -53,9 +54,15 @@ export default function ModalClient({
       return
     }
   }
- 
   
+  function handlePrev() {
+    router.replace(`/artwork/${previous.id}`, { scroll: false })
+  }
 
+  function handleNext() {
+    router.replace(`/artwork/${next.id}`, { scroll: false })
+  }
+  
   useEffect(() => {
     if (next) {
       router.prefetch(`/artwork/${next.id}`);
@@ -63,8 +70,9 @@ export default function ModalClient({
     if (previous) {
       router.prefetch(`/artwork/${previous.id}`);
     }
+    
   }, [next, previous, router]);
-
+  
   if (!picture) {
     return (
       <ModalWrap>
@@ -73,27 +81,22 @@ export default function ModalClient({
     );
   }
 
-  function handlePrev() {
-    router.replace(`/artwork/${previous.id}`, { scroll: false })
-  }
-
-  function handleNext() {
-    router.replace(`/artwork/${next.id}`, { scroll: false })
-  }
-
-  return (
-    <ModalWrap>
+  if (!isMobile) {
+    return (
+      <ModalWrap>
       <div className={`${geist.className} ${styles.modalLayout}`}>
-        <h2 className={styles.title}>
-          {picture.alt}
-          <span 
-            className={styles.back} 
-            onClick={onDismiss}
-            style={!isMobile ? {display: 'none'} : {display: 'block'}}
-          >
-            ↩
-          </span>
-        </h2>
+        <Transition>
+          <h2 className={styles.title}>
+            {picture.alt}
+            <span
+              className={styles.back}
+              onClick={onDismiss}
+              style={{display: 'none'}}
+            >
+              ↩
+            </span>
+          </h2>
+        </Transition>
 
         <div className={styles.contentWrap}>
           <div className={styles.arrowWrap} onClick={handlePrev}>
@@ -101,18 +104,75 @@ export default function ModalClient({
           </div>
 
           <div className={styles.imageContainer}>
-              <Image
-                src={picture.src}
-                alt={picture.alt}
-                fill
-                sizes="80vw"
-                onClick={onDismiss}
-              />
+              <Transition>
+                <Image
+                  src={picture.src}
+                  alt={picture.alt}
+                  fill
+                  sizes="80vw"
+                  onClick={onDismiss}
+                />
+              </Transition>
             
             {picture.description && (
               <div onClick={onWrap} className={styles.overlayWrap}>
                 <div
                   className={styles.overlay}
+                  onClick={onOverlay}
+                >
+                  <p className={styles.descriptionMats}>{picture.materials}</p>
+                  <div className={styles.descriptionText}>
+                    {picture.description}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className={styles.arrowWrap} onClick={handleNext}>
+            <ArrowR />
+          </div>
+        </div>
+      </div>
+      </ModalWrap>  
+  )
+  } else { 
+    return (
+    <ModalWrap>
+      <div className={`${geist.className} ${styles.modalLayout}`}>
+        <Transition>
+          <h2 className={styles.title}>
+            {picture.alt}
+            <span
+              className={styles.back}
+              onClick={onDismiss}
+              style={{display: 'block'}}
+            >
+              ↩
+            </span>
+          </h2>
+        </Transition>
+
+        <div className={styles.contentWrap}>
+          <div className={styles.arrowWrap} onClick={handlePrev}>
+            <ArrowL/>
+          </div>
+
+          <div className={styles.imageContainer}>
+              <Transition>
+                <Image
+                  src={picture.src}
+                  alt={picture.alt}
+                  fill
+                  sizes="80vw"
+                  onClick={onDismiss}
+                />
+              </Transition>
+            
+            {picture.description && (
+              <div onClick={onWrap} className={styles.overlayWrap}>
+                <div
+                  className={styles.overlayMobile}
                   style={ visible ? {opacity: '1'} : {opacity: '0'}}
                   onClick={onOverlay}
                   
@@ -132,5 +192,7 @@ export default function ModalClient({
         </div>
       </div>
     </ModalWrap>  
-  );
+  )
+  }
+
 }
