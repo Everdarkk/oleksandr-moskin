@@ -7,7 +7,7 @@ export default function PassiveStarfield() {
   const animationFrameId = useRef<number | null>(null);
 
   const draw = useCallback(() => {
-    const STAR_COUNT = 1000;
+    const STAR_COUNT = 400;
     const SPEED = 0.05;
     const MAX_DEPTH = 32;
 

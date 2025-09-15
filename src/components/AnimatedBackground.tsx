@@ -12,7 +12,14 @@ export default function AnimatedBackground() {
 
     return (
         <div className={styles.background}>
-            <Starfield />
+            {!isMobile ? <ActiveStarfield /> : 
+            
+            <video autoPlay muted loop className={styles.video}>
+                <source src="/videos/bg-stars.mp4" type="video/mp4" />
+            </video>
+            }
+            
+
         </div>
   )
 }
