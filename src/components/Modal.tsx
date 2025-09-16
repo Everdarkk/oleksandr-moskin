@@ -92,9 +92,7 @@ export default function ModalClient({
               className={styles.back}
               onClick={onDismiss}
               style={{display: 'none'}}
-            >
-              ↩
-            </span>
+            ></span>
           </h2>
         </Transition>
 
@@ -140,18 +138,23 @@ export default function ModalClient({
     return (
     <ModalWrap>
       <div className={`${geist.className} ${styles.modalLayout}`}>
-        <Transition>
-          <h2 className={styles.title}>
-            {picture.alt}
-            <span
-              className={styles.back}
+        <h2 className={styles.title}>
+          <Transition>
+            <h3 className={styles.titleMobile}>
+              {picture.alt}
+            </h3>
+          </Transition>
+
+          <Image
+              src={'/utils/close.png'}
+              alt="Close"
+              width={100}
+              height={100}
+              className={styles.close}
               onClick={onDismiss}
-              style={{display: 'block'}}
-            >
-              ↩
-            </span>
-          </h2>
-        </Transition>
+          />
+        </h2>
+        
 
         <div className={styles.contentWrap}>
           <div className={styles.arrowWrap} onClick={handlePrev}>
