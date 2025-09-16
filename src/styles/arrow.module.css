@@ -1,7 +1,7 @@
 .leftArrow,
 .rightArrow {
-  width: clamp(1.875rem, 5vw, 3.125rem);
-  height: clamp(1.875rem, 5vw, 3.125rem);
+  width: clamp(1.875rem, 5dvw, 3.125rem);
+  height: clamp(1.875rem, 5dvw, 3.125rem);
   transition: transform 0.3s ease;
   cursor: pointer;
   filter: invert();

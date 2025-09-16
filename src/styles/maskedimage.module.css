@@ -6,7 +6,7 @@
 }
 
 .video {
-    width: clamp(50rem, 90vw, 90rem);
+    width: clamp(50rem, 90dvw, 90rem);
     height: auto;
     -webkit-mask-image: url('/utils/mask-6.webp');
     mask-image: url('/utils/mask-6.webp');

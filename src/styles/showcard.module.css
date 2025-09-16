@@ -5,13 +5,13 @@
 
 .containerNormal, .containerReversed {
     /* background-color: crimson; */
-    margin: 5vw;
+    margin: 5dvw;
     display: flex;
     width: 50%;
     align-items: center;
     justify-content: space-between;
     justify-self: center;
-    gap: 5vw;
+    gap: 5dvw;
     color: ivory;
 }
 
@@ -23,10 +23,10 @@
     
 }
 .title {
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 2dvw, 2rem);
 }
 .place, .year {
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(0.8rem, 2dvw, 1.2rem);
 }
 
 .imageNormal {
@@ -40,8 +40,8 @@
 }
 
 .imageNormal, .imageReversed {
-    width: clamp(15.625rem, 30vw, 31.25rem);
-    height: clamp(15.625rem, 30vw, 31.25rem);
+    width: clamp(15.625rem, 30dvw, 31.25rem);
+    height: clamp(15.625rem, 30dvw, 31.25rem);
     transition: 0.5s ease
 }
 .imageNormal:hover, .imageReversed:hover {

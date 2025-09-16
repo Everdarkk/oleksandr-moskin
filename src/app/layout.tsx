@@ -4,7 +4,6 @@ import Navigation from "@/components/Navigation"
 import Transition from "@/components/ui/Transition"
 import Footer from "@/components/Footer"
 
-
 export const metadata: Metadata = {
   title: "Oleksandr Moskin",
   description: "Artist from Ukraine",

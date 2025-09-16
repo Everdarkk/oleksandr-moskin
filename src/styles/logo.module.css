@@ -1,8 +1,8 @@
 /* components/AnimatedLogo/AnimatedLogo.module.css */
 
 .logoContainer {
-  width: clamp(4rem, 5vw, 5rem);
-  height: clamp(4rem, 5vw, 5rem);
+  width: clamp(4rem, 5dvw, 5rem);
+  height: clamp(4rem, 5dvw, 5rem);
   cursor: pointer;
   position: relative;
 

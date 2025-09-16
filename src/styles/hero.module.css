@@ -37,7 +37,7 @@
     justify-content: center;
     align-items: center;
     pointer-events: auto;
-    font-size: clamp(4rem, 17vw, 9.5rem);
+    font-size: clamp(4rem, 17dvw, 9.5rem);
     
     text-align: center;
     mix-blend-mode: multiply;

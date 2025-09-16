@@ -147,8 +147,8 @@
   }
 
   .fullImage {
-    width: clamp(13rem, 80vw, 50rem);
-    height: clamp(20rem, 90vh, 75rem);
+    width: clamp(13rem, 80dvw, 50rem);
+    height: clamp(20rem, 90dvh, 75rem);
   }
 }
 
