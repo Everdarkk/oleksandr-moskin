@@ -5,10 +5,11 @@ import Transition from '@/components/ui/Transition'
 export default function ShowsPage() {
     return (
         <>
+            <AnimatedBackground />
             <Transition>
-                <AnimatedBackground />
                 <Shows />
             </Transition>
+            
         </>
     )
 }

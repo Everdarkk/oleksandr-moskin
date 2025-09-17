@@ -4,9 +4,9 @@ import { ShowType } from '../../lib/types'
 import styles from '../../styles/showcard.module.css'
 import { Geist_Mono } from 'next/font/google'
 import Image from 'next/image'
-import HoverText from './HoverText'
-import AutoAnimatingText from './AutoAnimatingText'
-import { useDeviceDetection } from '../../lib/hooks/useDeviceDetection'
+// import HoverText from './HoverText'
+// import AutoAnimatingText from './AutoAnimatingText'
+// import { useDeviceDetection } from '../../lib/hooks/useDeviceDetection'
 
 const geist = Geist_Mono({
     subsets: ['latin'],
@@ -21,8 +21,8 @@ export default function ShowCard({year, city, country, name, src, display}: Show
     const side = display === 'normal' ? styles.containerNormal : styles.containerReversed
     const direction = display === 'normal' ? styles.imageNormal : styles.imageReversed
 
-    const { isMobile } = useDeviceDetection()
-    const TextComponent = isMobile ? AutoAnimatingText : HoverText  
+    // const { isMobile } = useDeviceDetection()
+    // const TextComponent = isMobile ? AutoAnimatingText : HoverText  
 
     return (
         <div className={`${geist.className} ${side}`}>
@@ -37,9 +37,7 @@ export default function ShowCard({year, city, country, name, src, display}: Show
            
             <div className={styles.contentWrap}>
                 <h3 className={styles.title}>
-                    <TextComponent>
-                        {name}
-                    </TextComponent>
+                    {name}
                 </h3>
 
                 <p className={styles.place}>
