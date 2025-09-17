@@ -48,6 +48,25 @@
 
 
 /* ----- BREAKPOINTS ----- */
+
+@media (max-width: 1550px) {
+    .container {
+        height: auto;
+    }
+    .video {
+        clip-path: inset(2px 0 0 0);
+        position: relative;
+        height: 88dvh;
+        width: 100dvw;
+        object-fit: none;
+    }
+    .textWrap {
+        height: 100%;
+        width: 100dvw;
+        padding-bottom: 0;
+        font-size: 5rem;
+    }
+}
 @media (max-width: 1000px) {
     .container {
         height: 100dvh;
