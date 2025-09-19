@@ -2,10 +2,11 @@
 
 import {useRef, useEffect} from 'react'
 import styles from '@/styles/modalwrap.module.css'
-
+import { useDeviceDetection } from '@/lib/hooks/useDeviceDetection'
 
 export default function ModalWrap({ children,}: { children: React.ReactNode}) {
   const modalRef = useRef(null)
+  const { isMobile } = useDeviceDetection()
   
 
   useEffect(() => {
@@ -23,6 +24,25 @@ export default function ModalWrap({ children,}: { children: React.ReactNode}) {
       document.body.style.paddingRight = originalBodyPaddingRight
     }
   }, [])
+  useEffect(() => {
+    if (isMobile) {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.overflow = 'hidden';
+
+      return () => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollY); // відновлюємо скрол позицію
+      };
+    }
+  },[isMobile])
 
   return (
   

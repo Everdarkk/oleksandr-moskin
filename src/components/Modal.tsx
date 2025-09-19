@@ -70,7 +70,6 @@ export default function ModalClient({
     if (previous) {
       router.prefetch(`/artwork/${previous.id}`);
     }
-    
   }, [next, previous, router]);
   
   if (!picture) {
